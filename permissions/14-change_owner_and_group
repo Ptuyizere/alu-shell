@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 1 -not -path "./\.*" -exec chown vincent:staff {} \; | true; find . -maxdepth 1 -name "*" -type d -exec chown -R vincent:staff {} \;
+for file in *; do chown vincent:staff "$file" done
