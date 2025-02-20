@@ -1,2 +1,2 @@
 #!/bin/bash
-eval "declare -p"$'\n'"declare -f"
+(declare -F | cut -d" " -f3) > /tmp/f & (export -p & set) | grep -v '^declare -f' | grep -v '^_' & cat /tmp/f & rm /tmp/f
