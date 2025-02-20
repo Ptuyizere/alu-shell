@@ -1,2 +1,2 @@
 #!/bin/bash
-while IFS= read -r line $(read -r skip) 2>/dev/null do printf '%s\n' "$line" done
+while read -r line 2>/dev/null < <(paste -d'\n' - /dev/null | paste - -) do echo "$line" done
