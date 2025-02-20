@@ -1,2 +1,2 @@
 #!/bin/bash
-while read -r line 2>/dev/null < <(paste -d'\n' - /dev/null | paste - -) do echo "$line" done
+cat -n /dev/stdin | grep " *[13579] "
