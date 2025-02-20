@@ -1,2 +1,2 @@
 #!/bin/bash
-nl -ba | grep -E '^[0-9]+ [^ ]' | grep -E '^[13579]'
+while read line $(read skip) do echo "$line" done
