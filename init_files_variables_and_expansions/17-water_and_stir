@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(( $(echo "$(( WATER#$WATER + STIR#$STIR ))" | tr '0123456789' "$(printf '%s' {A..Z} | cut -c -$bestchol)") ))
+echo $(( WATER#"$WATER" + STIR#"$STIR" )) | xargs printf "%d\n"
