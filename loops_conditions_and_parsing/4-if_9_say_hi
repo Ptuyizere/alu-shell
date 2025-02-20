@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Bash script that prints "Best School" 10 times, but for the 9th time it prints "Best School" then hi on a new line.
 count=1
-while [ $count -lt 11 ];
+while [ $count -lt 10 ];
 do
 	if [ $count -eq 9 ];
 	then
