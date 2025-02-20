@@ -1,2 +1,2 @@
 #!/bin/bash
-paste - /dev/null | cut -f1
+nl -ba -s'' -w1 /dev/stdin | grep "[13579]$"
