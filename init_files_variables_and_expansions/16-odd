@@ -1,2 +1,2 @@
 #!/bin/bash
-nl -ba -nln | grep -E '^[0-9]*[13579]\t' | cut -f2-
+nl -ba | grep -E '^[0-9]+ [^ ]' | grep -E '^[13579]'
