@@ -1,2 +1,2 @@
 #!/bin/bash
-cat -n /dev/stdin | grep " *[13579] "
+nl -ba -nln | grep -E '^[0-9]*[13579]\t' | cut -f2-
