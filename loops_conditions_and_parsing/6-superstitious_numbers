@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#Bash script prints 1 to 20. Prints bad luck from China on 4th loop, bad luck from Japan on 9th, and bad luck from Italy on 17th.
+count=1
+while [ $count -lt 21 ];
+do
+	case $count in
+		4)
+			echo "bad luck from China"
+			;;
+		9)
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo "bad luck from Italy"
+			;;
+		*)
+			echo "$count"
+	esac
+	count=$((count + 1))
+done
