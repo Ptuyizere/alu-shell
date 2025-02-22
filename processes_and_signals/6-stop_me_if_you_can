@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Stop the process running the script '4-to_infinity_and_beyond without using kill or killall
-pid=$(pgrep -f "4-to_infinity_and_beyond)
+pid=$(pgrep -f "4-to_infinity_and_beyond")
 if [[ -n "$pid" ]]; then
 	echo "0" > "/proc/$pid/oom_score_adj"
 fi
