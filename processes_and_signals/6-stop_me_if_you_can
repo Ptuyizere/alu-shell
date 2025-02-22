@@ -4,7 +4,7 @@ pid=$(pgrep -f "4-to_infinity_and_beyond")
 
 # Check if the process exists
 if [[ -n "$pid" ]]; then
-    echo "SIGTERM" > /proc/$pid/status 2>/dev/null || pkill -f "4-to_infinity_and_beyond"
+    echo 'SIGTERM' > /proc/$pid/status 2>/dev/null || pkill -f '4-to_infinity_and_beyond'
 else
     echo "Process not found."
 fi
