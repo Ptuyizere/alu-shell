@@ -10,4 +10,5 @@ echo "Listing all running processes in a hierarchical format:"
 pstree -A -p
 
 echo -e "\nDetailed process listing:"
-ps -e -o user,pid,ppid,tty,stat,start,time,cmd --sort=ppid
+
+ps -e -o user,pid,ppid,tty,stat,start,time,%cpu,%mem,vsz,rss,cmd --sort=ppid
