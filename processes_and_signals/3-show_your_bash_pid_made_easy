@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Display PID and process name of processes containing 'bash' without using ps
+for pid in /proc/[0-9]*/status; do
+    if grep -q "bash" "$pid" 2>/dev/null; then
+        pid_number=$(basename "$(dirname "$pid")")
+        process_name=$(grep "Name:" "$pid" | awk '{print $2}')
+        echo "$pid_number $process_name"
+    fi
+done
