@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-# Loop through all non-hidden files in the current directory
+# Loop through all visible files in current directory
 for file in *; do
-    if [[ -f "$file" || -d "$file" ]]; then
-        new_name="${file#*-}"
-        
-        if [[ "$new_name" != "$file" ]]; then
-            echo "$new_name"
-        fi
+    # Skip hidden files and ensure file exists and is not a directory
+    if [[ ! "$file" =~ ^\. && -f "$file" && "$file" == *-* ]]; then
+        # Extract everything after the first dash
+        name_part=${file#*-}
+        echo "$name_part"
     fi
 done
