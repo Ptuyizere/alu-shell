@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Loop through all non-hidden files in the current directory
+for file in *; do
+    if [[ -f "$file" || -d "$file" ]]; then
+        new_name="${file#*-}"
+        
+        if [[ "$new_name" != "$file" ]]; then
+            echo "$new_name"
+        fi
+    fi
+done
