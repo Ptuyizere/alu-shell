@@ -1,0 +1,18 @@
+#!/bin/bash
+# Script that displays lines containing the bash word.
+# shellcheck disable=SC2009
+
+if ! command -v pstree &> /dev/null
+then
+    echo "pstree is not installed. Installing..."
+    sudo apt-get install -y psmisc
+fi
+
+echo "Listing all running processes in a hierarchical format:"
+pstree -A -p
+
+echo -e "\nDetailed process listing:"
+ps -e -o user,pid,ppid,tty,stat,start,time,%cpu,%mem,vsz,rss,cmd --sort=ppid
+
+echo -e "\nBash process information:"
+ps -e -o user,pid,ppid,tty,stat,start,time,%cpu,%mem,vsz,rss,cmd | grep bash
