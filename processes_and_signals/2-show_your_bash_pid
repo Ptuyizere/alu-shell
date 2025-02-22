@@ -15,4 +15,4 @@ echo -e "\nDetailed process listing:"
 ps -e -o user,pid,ppid,tty,stat,start,time,%cpu,%mem,vsz,rss,cmd --sort=ppid
 
 echo -e "\nBash process information:"
-ps -e -o user,pid,ppid,tty,stat,start,time,%cpu,%mem,vsz,rss,cmd | grep bash
+ps -e -o user,pid,ppid,tty,stat,start,time,%cpu,%mem,vsz,rss,cmd | grep [b]ash
