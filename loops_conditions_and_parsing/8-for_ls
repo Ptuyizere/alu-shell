@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 # Loop through all visible files in current directory
 for file in *; do
-    # Skip hidden files and ensure file exists and is not a directory
-    if [[ ! "$file" =~ ^\. && -f "$file" && "$file" == *-* ]]; then
-        # Extract everything after the first dash
-        name_part=${file#*-}
-        echo "$name_part"
+    if [[ "$file" == *-* ]]; then
+	    echo "${file#*-}"
     fi
 done
