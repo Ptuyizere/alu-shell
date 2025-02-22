@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Define the log file name
+log_file="apache-access.log"
+
+# Check if the log file exists
+if [[ ! -f "$log_file" ]]; then
+    echo "Error: Log file '$log_file' not found!"
+    exit 1
+fi
+
+# Extract and display visitor IP and HTTP status code using awk
+awk '{print $1, $9}' "$log_file"
