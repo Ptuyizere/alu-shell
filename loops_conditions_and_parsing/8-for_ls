@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-# Loop through all visible files in current directory
-for file in *; do
+# Loop through all non-hidden files in the current directory
+for file in $(ls -p | grep -v /); do
     if [[ "$file" == *-* ]]; then
-	    echo "${file#*-}"
+        new_name="${file#*-}"
+        echo "$new_name"
+    else
+        echo "$file"
     fi
 done
+
