@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # Stop the process running the script '4-to_infinity_and_beyond without using kill or killall
 pid=$(pgrep -f "4-to_infinity_and_beyond")
+
+# Check if the process exists
 if [[ -n "$pid" ]]; then
-	echo "0" > "/proc/$pid/oom_score_adj"
+    echo "SIGTERM" > /proc/$pid/status 2>/dev/null || pkill -f "4-to_infinity_and_beyond"
+else
+    echo "Process not found."
 fi
