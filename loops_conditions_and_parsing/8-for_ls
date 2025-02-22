@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 # Loop through all non-hidden files in the current directory
-for file in $(ls -p | grep -v /); do
-    if [[ "$file" == *-* ]]; then
-        new_name="${file#*-}"
-        echo "$new_name"
-    else
-        echo "$file"
+for file in *; do
+    # Skip directories
+    if [[ -f "$file" ]]; then
+        # Check if the filename contains a dash
+        if [[ "$file" == *-* ]]; then
+            # Extract the part after the first dash
+            new_name="${file#*-}"
+            echo "$new_name"
+        else
+            # Print the full name if no dash exists
+            echo "$file"
+        fi
     fi
 done
-
